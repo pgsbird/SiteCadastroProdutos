@@ -1,0 +1,23 @@
+.conteudo img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+     -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);   
+}
+.conteudo{
+    position: relative;
+    max-width: 500px;
+    height: 260px;  
+    overflow: hidden;
+}
+.conteudo img.portrait{
+    width: 100%;
+  height: auto;
+}
+.card-footer a{
+    margin-right:20px;
+}

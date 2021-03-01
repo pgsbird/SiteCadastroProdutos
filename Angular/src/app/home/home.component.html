@@ -1,0 +1,24 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Lista de produtos Cadastrados</h4>
+    <div class="card-footer text-right">
+        <button type="button" class="btn btn-primary" routerLink="/produtos">+ Produto</button>
+  </div>
+    <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4" *ngFor="let product of products">
+        <div class="card" style="width: 18rem;" >
+            <h4 class="card-header">#{{product.id}} - {{product.name}}</h4>
+            <div class="conteudo"><img [src]=createImgPath(product.image) class="card-img-top" alt="..."></div>            
+            <div class="card-body">
+              <h5 class="card-title">R$ {{FormataValor(product.value)}}</h5>
+              <div class="card-footer">
+                <button type="button" [routerLink]="['/produtos', product.id]" class="btn btn-primary btn-lg btn-block">Editar</button>
+                <button type="button" (click)="desejaDeletar(product)" class="btn btn-danger btn-lg btn-block">Excluir</button>
+              </div>        
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
